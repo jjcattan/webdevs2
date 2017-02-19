@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Towed Vehicles</title>
+        <style>
+            body {
+                background-color:pink;
+            }
+            p, h1 {font-family: helvetica; color: red;}
+            p {font-size:1.5em;line-height:1.5em; margin-left: 24px; color: red;}
+            pre {font-size: 2em;}
+            div { border: 10px solid black; margin: 12px; border-radius: 15px; background-color: #ededed}
+        </style>
+    </head>
+    <body>
+    <h1>Towed Vehicle Data Display @CityOfChicago</h1>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+       <div id="piechart" style="width: 900px; height: 500px;"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      var towedVehicle;
+            
+            $(function(){
+                
+                $("#submit").click(function(){
+                    
+                    var html = "";
+                    
+                    // base URL to the food inspections data
+                    var baseURL = 'https://data.cityofchicago.org/resource/rp42-fxjt.json';
+                    
+                    // optional filters we're appending - date range and zip
+                    var filters = "";
+                    
+                    // full URL
+                    var url = baseURL;
+                        
+                    $.getJSON(url).done (function (data) {
+                        var = "sil"
+                        var = "blk"
+                        var = "oth"
+                        var = "grn"
+                        var = "blu"
+                        // TODO:  add script to add data to the DOM
+                        console.log(data);
+                        // loop through the records
+                        var sil = 0;
+                        var blk = 0;
+                        var oth = 0;
+                        var grn = 0;
+                        var blu = 0;
+                        
+                        $.towedVehicle = data;
+                        if(towedVehicle.length == 0){
+                            html = "No Vehicle Reported";
+                        } else{
+                            $.each(towedVehicle, function(index, value){
+                                if(value.tow_date == date){
+                                    var col = value.color;
+                                    if (col == "BLK")
+                                        blk++;
+                                }
+                                    else if(col == "GRN")
+                                        grn++;
+                            }
+                                    else if(col == "SIL")
+                             
+                                        sil++;
+                        }
+                                    else if(col == "BLU")
+                         
+                                        blu++;
+                    }
+                                    else
+                                        oth++;
+                }
+                                }
+                            })  // end of .each loop
+                        
+                   $("body").append(html);
+                   
+                });
+                })
+        )
+    </script>
+    </body>
+</html>        
