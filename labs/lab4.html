@@ -47,7 +47,7 @@
                         
                         var date = towedVehicle[0].tow_date;
 
-                        var blk = 0, whi = 0, gry = 0, sil = 0, grn = 0, blu = 0, red = 0, oth = 0;
+                        var blk = 0, whi = 0, gry = 0, sil = 0, grn = 0,  oth = 0;
                         
                         if(towedVehicle.length == 0){
                             html = "No Vehicle Reported";
@@ -65,10 +65,7 @@
                                         sil++;
                                     else if(col == "GRN")
                                         grn++;
-                                    else if(col == "BLU")
-                                        blu++;
-                                    else if(col == "RED" || col == "MAR")
-                                        red++;
+                                    
                                     else
                                         oth++;
                                 }
@@ -102,8 +99,6 @@
                               ['Grey', gry],
                               ['Silver', sil],
                               ['Green', grn],
-                              ['Blue', blu],
-                              ['Red', red],
                               ['Other', oth]
                             ]);
                     
