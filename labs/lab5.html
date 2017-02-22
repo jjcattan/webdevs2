@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Towed Car Data </title>
+     <head>
+        <title>Crimes in 2017 - @CityOfChicago</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            p, h1 {
+                font-family: helvetica;
+            }
+            p {
+                font-size:1.5em;
+                line-height:1.5em; 
+                margin-left: 24px;
+            }
+            pre {
+                font-size: 2em;
+            }
+            div { 
+                background-color: orange
+            }
+            body {
+                background-color:skyblue;
+                
+            }
+            #title {
+                color:purple;
+            }
+        </style>
     </head>
     <body>
-        <h1>Towed Car Data</h1>
-        <button id="submit">Submit</button>
+        <h1 id="title">Crimes in 2017 - @CityOfChicago</h1>
+        
+        <button id="submit">Data</button>
+
         <div id="results"></div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -21,100 +48,129 @@
             
             */
             
-            var towedVehicle;
-            
             $(function(){
                 
                 $("#submit").click(function(){
-                    
+                
                     var html = "";
                     
+                    //  variable to hold the returned data
+                    var inspections;
+                    
                     // base URL to the food inspections data
-                    var baseURL = 'https://data.cityofchicago.org/resource/cwig-ma7x.json';
+                    var baseURL = 'https://data.cityofchicago.org/resource/ijzp-q8t2.json';
                     
                     // optional filters we're appending - date range and zip
                     var filters = "";
                     
                     // full URL
-                    var url = baseURL;
+                    var url = baseURL + filters;
                         
                     $.getJSON(url).done (function (data) {
                         // TODO:  add script to add data to the DOM
                         console.log(data);
                         // loop through the records
+                        var currentDate = data[0].date;
                         
-                        towedVehicle = data;
+                       var ars = 0; //Arson    
+                       var asu = 0; //Assault
+                       var bat = 0; //Battery
+                       var bur = 0; //Burglary
+                       var cpd = 0; //Interference with Public Officer
+                       var crimDam = 0; //Criminal Damage
+                       var crimTre = 0; //Criminal Trespassing
+                       var dec = 0; //Deceptive Pratice
+                       var gam = 0; //Gambling
+                       var kid = 0; //Kidnapping
+                       var liq = 0; //Liquor
+                       var mot = 0; //Motor Vehicle Theft
+                       var narc = 0; //Narcotics
+                       var off = 0; //Offense
+                       var pea = 0; //Public Peace Violation
+                       var rob = 0; //Robbery
+                       var the = 0; //Theft 
+                       var wep = 0; //Weapons Violation
+                       var other = 0; //Other Crimes
+                       
                         
-                        var date = towedVehicle[0].tow_date;
-
-                        var blk = 0, whi = 0, gry = 0, sil = 0, grn = 0,  oth = 0;
+                        $.each(data, function(i,v){
+                           if(v.date == currentDate){
+                                if(v.primary_type == "ARSON") {
+                                   ars++;
+                               } else if(v.primary_type == "ASSAULT") {
+                                   asu++;
+                               } else if(v.primary_type == "BATTERY") {
+                                   bat++;
+                               } else if(v.primary_type == "BURGLARY") {
+                                   bur++;
+                               } else if(v.primary_type == "INTERFERENCE WITH PUBLIC OFFICER") {
+                                   cpd++;
+                               } else if(v.primary_type == "CRIMINAL DAMAGE") {
+                                   crimDam++;
+                               } else if(v.primary_type == "CRIMINAL TRESPASSING") {
+                                   crimTre++;
+                               } else if(v.primary_type == "DECEPTIVE PRATICE") {
+                                   dec++;
+                               } else if(v.primary_type == "GAMBLING") {
+                                   gam++;
+                               } else if(v.primary_type == "KIDNAPPING") {
+                                   kid++;
+                               } else if(v.primary_type == "LIQUOR") {
+                                   liq++;
+                               } else if(v.primary_type == "MOTOR VEHICLE THEFT") {
+                                   mot++;
+                               } else if(v.primary_type == "NARCOTICS") {
+                                   narc++;
+                               } else if(v.primary_type == "OFFENSE") {
+                                   off++;
+                               } else if(v.primary_type == "PUBLIC PEACE VIOLATION") {
+                                   pea++;
+                               } else if(v.primary_type == "ROBBERY") {
+                                   rob++;
+                               } else if(v.primary_type == "THEFT") {
+                                   the++;
+                               } else if(v.primary_type == "WEAPONS VIOLATION") {
+                                   wep++;
+                               } else {
+                                   other++;
+                               }
+                           }
+                        })
                         
-                        if(towedVehicle.length == 0){
-                            html = "No Vehicle Reported";
-                        } else{
-                            $.each(towedVehicle, function(index, value){
-                                if(value.tow_date == date){
-                                    var col = value.color;
-                                    if (col == "BLK")
-                                        blk++;
-                                    else if(col == "WHI")
-                                        whi++;
-                                    else if(col == "GRY")
-                                        gry++;
-                                    else if(col == "SIL")
-                                        sil++;
-                                    else if(col == "GRN")
-                                        grn++;
-                                    
-                                    else
-                                        oth++;
-                                }
-                            })  // end of .each loop
                             
-                            /*html = "<p>Black: " + blk + "<br>" +
-                                    "White: " + whi + "<br>" +
-                                    "Grey: " + gry + "<br>" +
-                                    "Silver: " + sil + "<br>" +
-                                    "Green: " + grn + "<br>" +
-                                    "Blue: " + blu + "<br>" +
-                                    "Red: " + red + "</p>";*/
-                            // Load the Visualization API and the corechart package.
-                          google.charts.load('current', {'packages':['corechart']});
-                    
-                          // Set a callback to run when the Google Visualization API is loaded.
-                          google.charts.setOnLoadCallback(drawChart);
-                    
-                          // Callback that creates and populates a data table,
-                          // instantiates the pie chart, passes in the data and
-                          // draws it.
-                          function drawChart() {
-                    
-                            // Create the data table.
-                            var data = new google.visualization.DataTable();
-                            data.addColumn('string', 'Car color');
-                            data.addColumn('number', 'Quantity');
-                            data.addRows([
-                              ['Black', blk],
-                              ['White', whi],
-                              ['Grey', gry],
-                              ['Silver', sil],
-                              ['Green', grn],
-                              ['Other', oth]
-                            ]);
-                    
-                            // Set chart options
-                            var options = {'title':'Towed cars by color on ' + date,
-                                           'width':400,
-                                           'height':300};
-                    
-                            // Instantiate and draw our chart, passing in some options.
-                            var chart = new google.visualization.PieChart(document.getElementById('results'));
-                            chart.draw(data, options);
-                          }
-                        }
                         
-                        //$("#results").html(html);
-                        
+                        google.charts.load('current', {'packages':['corechart']});
+                      google.charts.setOnLoadCallback(drawChart);
+                      function drawChart() {
+                
+                        var data = google.visualization.arrayToDataTable([
+                          ['Crime', 'Number of violations'],
+                          ['Arson', chevy],
+                          ['',  dod],
+                          ['Ford', ford],
+                          ['Honda', hon],
+                          ['Lexus', lex],
+                          ['Jaguar', jagu],
+                          ['Jeep', jeep],
+                          ['Mazda', maz],
+                          ['Mercedes', mer],
+                          ['Nissan', nis],
+                          ['Toyota', toy],
+                          ['Volkswagen', vol],
+                          ['Other',    other]
+                        ]);
+                
+                        var options = {
+                          title: 'Make of towed vehicles on ' + currentDate
+                        };
+                
+                        var chart = new google.visualization.PieChart(document.getElementById('results'));
+                
+                        chart.draw(data, {
+                            is3D: false
+                        });
+                      }
+
                     }) // end of getJSON function
                     
                 })  // end of click function
