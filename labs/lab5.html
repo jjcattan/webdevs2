@@ -31,7 +31,7 @@
     <body>
         <h1 id="title">Crimes in 2017 - @CityOfChicago</h1>
         
-        <button id="submit">Data</button>
+        <button id="submit">See Crime in 2017</button>
 
         <div id="results"></div>
         
@@ -107,7 +107,7 @@
                                    cpd++;
                                } else if(v.primary_type == "CRIMINAL DAMAGE") {
                                    crimDam++;
-                               } else if(v.primary_type == "CRIMINAL TRESPASSING") {
+                               } else if(v.primary_type == "CRIMINAL TRESPASS") {
                                    crimTre++;
                                } else if(v.primary_type == "DECEPTIVE PRATICE") {
                                    dec++;
@@ -115,7 +115,7 @@
                                    gam++;
                                } else if(v.primary_type == "KIDNAPPING") {
                                    kid++;
-                               } else if(v.primary_type == "LIQUOR") {
+                               } else if(v.primary_type == "LIQUOR LAW VIOLATION") {
                                    liq++;
                                } else if(v.primary_type == "MOTOR VEHICLE THEFT") {
                                    mot++;
@@ -145,27 +145,33 @@
                 
                         var data = google.visualization.arrayToDataTable([
                           ['Crime', 'Number of violations'],
-                          ['Arson', chevy],
-                          ['',  dod],
-                          ['Ford', ford],
-                          ['Honda', hon],
-                          ['Lexus', lex],
-                          ['Jaguar', jagu],
-                          ['Jeep', jeep],
-                          ['Mazda', maz],
-                          ['Mercedes', mer],
-                          ['Nissan', nis],
-                          ['Toyota', toy],
-                          ['Volkswagen', vol],
-                          ['Other',    other]
+                          ['Arson',      ars],
+                          ['Assault',  asu],
+                          ['Battery', bat],
+                          ['Burglary', bur],
+                          ['Criminal Damage', crimDam],
+                          ['Criminal Trespass', crimTre],
+                          ['Deceptive Pratice', dec],
+                          ['Gambling', gam],
+                          ['Kidnapping', kid],
+                          ['Liquor Law Violation', liq],
+                          ['Motor Vehicle Theft', mot],
+                          ['Narcotics', narc],
+                          ['Offense', off],
+                          ['Public Peace Violation', pea],
+                          ['Robbery', rob],
+                          ['Theft', the],
+                          ['Weapons Violation', wep],
+                          ['Other Crime',    other]
                         ]);
                 
                         var options = {
-                          title: 'Make of towed vehicles on ' + currentDate
+                          title: 'Crime in Chicago on ' + currentDate
                         };
                 
-                        var chart = new google.visualization.PieChart(document.getElementById('results'));
-                
+                        var chart = new google.visualization.ScatterChart(document.getElementById('results'));
+                        //Try to get scatter effect on ScatterChart
+                        //Try PieChart too
                         chart.draw(data, {
                             is3D: false
                         });
