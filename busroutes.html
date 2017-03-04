@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+
+ 
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+        $(function() {
+          
+          
+          var apiPassThruUrl = "https://polar-garden-75406.herokuapp.com/apiPassThru.php";
+          
+          var apiEndpoint = "http://www.ctabustracker.com/bustime/api/v2/getpredictions";
+          
+          
+           $.ajax({
+                  url: apiPassThruUrl,
+                  dataType: "json",
+                  method: 'GET',
+                  data: {"apiEndpoint": apiEndpoint,
+                          "key" : "H4ijGZQSntWDSzFAwp9Rz8EUd",
+                          "stpid" : "8417,,8195,12527,12569",
+                          "format":"json"}
+                }).done (function (data) {
+                  console.log(data);
+                  
+                $("#westernButton").click(function(){
+                    
+                });
+              
+                  $.each(data["bustime-response"]["prd"], function(i,v) {
+                     var displayCountdown = "<p>Arrives in: " + v.prdctdn + " MINUTES</p>";
+                     if (v.prdctdn == "DUE") {
+                         displayCountdown = "<p>Arrives in: " + v.prdctdn + " NOW</p>";
+                     }
+                     if (v.prdctdn == "DLY") {
+                         displayCountdown = "<p>Arrives in: BUS DELAYED</p>";
+                     }
+                     var html = "<div>" + 
+                     "<p>Stop ID: " + v.stpid + "</p>" +
+                     "<p>Route: " + v.rt + "</p>" +
+                     "<p>Bus Stop: " + v.stpnm + "</p>" +
+                     "<p>Direction: " + v.rtdir + "</p>" +
+                     "<p>To: " + v.des + "<p>" +
+                     displayCountdown +
+                     "</div>"
+                     
+                     $("body").append(html);
+                     
+                     
+                    
+                  })
+    
+                });
+            });
+                
+       
+    </script>
+</script>
+ 
+</body>
+</html>
