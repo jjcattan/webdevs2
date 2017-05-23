@@ -2,7 +2,7 @@
   <head>
     <!-- Material Design Lite -->
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.yellow-deep_purple.min.css" />
     <!-- Material Design icon font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <style type="text/css">
@@ -10,8 +10,8 @@
                 display: none;
             }
             body  {
-    color: black;
-}
+                color: black;
+            }
 
         </style>
   </head>
@@ -40,31 +40,41 @@
       </div>
       <main class="mdl-layout__content">
         <div id="screen1" class="screen page-content">
-          <img src="insideofchurch.jpg" alt="" style="width:450px;height:228px;">
+          <img src="insideofchurch.jpg" alt="" style="width:fit;height:fit;">
           <h3>St.Josphat Attendence Home</h3>
         <p>INFO HERE</p>
         </div>
-        <div id="screen2" class="screen page-content">Attendence Data</div>
-        <div id="screen3" class="screen page-content">Embbed google survey</div>
+        <div id="screen2" class="screen page-content"><iframe src="https://docs.google.com/spreadsheets/d/1eTFvj452Y63FUEPyN0aIQKeGWNC8LNUyHwcdDL9_Gss/pubhtml?widget=true&amp;headers=false" style="width:fit; height:700px;"></iframe></div>
+        <div id="screen3" class="screen page-content"><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSchEpCThpYqFg09ShYb3Dbb1Za-QeUZ4Y1jAbp1A2R9BYap3A/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe></div>
       </main>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script>
-        $(function(){
-                $("screen1").show();
-                $("#link1").on("click", function(){
-                    $(".screen").hide();
-                    $("#screen1").show();
-                })
-                                $("#link2").on("click", function(){
-                    $(".screen").hide();
-                    $("#screen2").show();
-                })
-                                $("#link3").on("click", function(){
-                    $(".screen").hide();
-                    $("#screen3").show();
-                })
+      $(function() {
+        $("#screen1").show();
+        $("#link1").on("click", function() {
+          $(".screen").hide();
+          $("#screen1").show();
         })
+        $("#link2").on("click", function() {
+          $(".screen").hide();
+          $("#screen2").show();
+        })
+        $("#link3").on("click", function() {
+          $(".screen").hide();
+          $("#screen3").show();
+        })
+        $('.mdl-navigation__link').click(function() {
+    
+          //  the drawer
+          $('.mdl-layout__drawer').toggleClass('is-visible');
+    
+          // the transparent overlay that shows when you open the drawer
+          $('.mdl-layout__obfuscator').toggleClass('is-visible');
+    
+        });
+    
+      })
     </script>
   </body>
 </html>
