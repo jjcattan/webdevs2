@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Brick Breaker</title>
+        <style>
+            * {
+                padding:0px;
+                margin:0px;
+            }
+            #myCanvas {
+                background-color:black;
+                display:block;
+                margin:0 auto;
+            }
+        </style>
+    </head>
+    <-->add 25 px above space to bounce add outer Frame</-->
+    <body>
+        
+        <h1>Score</h1>
+        
+        <canvas id = "myCanvas" width = "1300px" height = "725px"></canvas>
+        
+        <script >
+            
+            //Variables
+            var canvas = document. getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            var x = canvas.width / 2;
+            var y = canvas.height - 30;
+            var dx = 2;
+            var dy = -2;
+            
+            console.log(x + " " + y)
+            
+            //Drawing Function
+            function draw() {
+                x += dx;
+                y += dy;
+            }
+            setInterval(draw, 10);
+            
+            //Red Circle
+            ctx.beginPath();
+            ctx.arc(240,500,20,0,Math.PI*2, false);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+            ctx.closePath();
+
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(25,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(100,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,0,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();4
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,0,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(25,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(100,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,25,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,25,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(25,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(100,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,50,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,50,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(25,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(125,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,75,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,75,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(50,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(125,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,100,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(450,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,100,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(50,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(125,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,125,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,125,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(50,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(100,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,150,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,150,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(25,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(100,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(175,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(250,175,75,25);
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(325,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(400,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(475,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(550,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(625,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(700,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(775,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(850,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+             
+             var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.rect(925,175,75,25);
+            ctx.fillStyle = "#A52A2A";
+            ctx.fill();
+            ctx.stroke();
+            
+        </script>
+        
+    </body>
+    
+</html>
